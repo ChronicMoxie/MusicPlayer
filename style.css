@@ -1,0 +1,28 @@
+#videoContainer {
+    position: relative;
+}
+input,
+button{
+    background-color: rgb(71, 71, 71);
+    color: white;
+}
+#button1,
+#button2,
+#button3,
+#button4 {
+    position: absolute;
+    bottom: 10px;
+    padding: 5px 10px;
+}
+#button1{
+    left: 10px;
+}
+#button2{
+    left: 65px;
+}
+#button3{
+    left: 133px;
+}
+#button4{
+    left: 229px;
+}
