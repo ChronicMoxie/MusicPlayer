@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="style.css"/> 
+    <script>
+        // Function to print "Hello, World!" when anything in the browser is clicked
+        function setupHelloWorldClick() {
+            // Adding an event listener to the entire document
+            document.addEventListener('click', function() {
+                console.log('Hello, World!');
+            });
+        }
+
+        // Call the function to activate the click listener
+        setupHelloWorldClick();
+    </script>
 <form id="form">
     <input type="text" id="url" placeholder="Enter Watch Id: 710J6r795JQ" required>
     <button>Submit</button>
