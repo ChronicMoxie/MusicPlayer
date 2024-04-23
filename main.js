@@ -5,6 +5,14 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 let form = document.getElementById('form')
 
+let userInteracted = false;
+
+document.addEventListener('click', function() {
+    userInteracted = true;
+    console.log('User has interacted with the page!');
+});
+
+
 form.addEventListener('submit',(e) => {
     e.preventDefault()
     let url = document.getElementById('url').value
@@ -51,8 +59,12 @@ function onPlayerStateChange(event) {
 function changeVideo(url) {
     player.loadVideoById({videoId: url});
 }
-function playVideo(){
-    player.playVideo()
+function playVideo() {
+    if (userInteracted) {
+        player.playVideo();
+    } else {
+        console.log("The video cannot play yet because there hasn't been a user interaction.");
+    }
 }
 function pauseVideo(){
     player.pauseVideo()
