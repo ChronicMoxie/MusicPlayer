@@ -20,7 +20,8 @@ function onYouTubeIframeAPIReady() {
             controls: 1, // Enable controls
             disablekb: 0,
             enablejsapi: 1,
-            autoplay: 1 // Set autoplay to 0
+            autoplay: 1,
+            mute: 1
         },
         events: {
             'onReady': onPlayerReady,
