@@ -60,7 +60,9 @@ function changeVideo(url) {
     player.loadVideoById({videoId: url});
 }
 function playVideo() {
+    console.log("Attempting to play video...");
     if (userInteracted) {
+        console.log("User has interacted, playing video.");
         player.playVideo();
     } else {
         console.log("The video cannot play yet because there hasn't been a user interaction.");
