@@ -30,14 +30,21 @@ player = new YT.Player('videoPlayer', {
 });
 }
 
+
 function onPlayerReady(event) {
     // Player is ready but no video is loaded
-	player.setVolume(10)
+    player.setVolume(10);
+
+    // Add allow="autoplay" to the iframe
+    var iframe = document.querySelector('#videoPlayer iframe');
+    if (iframe) {
+        iframe.setAttribute('allow', 'autoplay');
+    }
 }
 
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING && !done) {
-      done = true;
+        done = true;
     }
 }
 
