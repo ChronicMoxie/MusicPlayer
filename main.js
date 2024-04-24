@@ -19,24 +19,26 @@ form.addEventListener('submit',(e) => {
     changeVideo(url)
 })
 var player;
+var done = false;  // Define done at a global scope
+
 function onYouTubeIframeAPIReady() {
-player = new YT.Player('videoPlayer', {
-    height: '390',
-    width: '640',
-    playerVars: {
-        playersinline: 1,
-        controls: 1, // Enable controls
-        disablekb: 0,
-        enablejsapi: 1,
-        autoplay: 1,
-        mute: 1 // Ensure this is recognized correctly; might require "muted" depending on the API version
-    },
-    events: {
-        'onError': onPlayerError,
-        'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
-    }
-});
+    player = new YT.Player('videoPlayer', {
+        height: '390',
+        width: '640',
+        playerVars: {
+            playsinline: 1,  // Corrected typo here
+            controls: 1,
+            disablekb: 0,
+            enablejsapi: 1,
+            autoplay: 1,
+            mute: 1
+        },
+        events: {
+            'onError': onPlayerError,
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
 }
 
     // Define the onError event handler
