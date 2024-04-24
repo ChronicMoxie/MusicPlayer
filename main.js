@@ -43,25 +43,9 @@ function onYouTubeIframeAPIReady() {
 
     // Define the onError event handler
     function onPlayerError(event) {
-      switch(event.data) {
-        case 2:
-          console.log('Request contains an invalid parameter value');
-          break;
-        case 5:
-          console.log('The requested content cannot be played in an HTML5 player or another error related to the HTML5 player has occurred.');
-          break;
-        case 100:
-          console.log('The video requested was not found.');
-          break;
-        case 101:
-        case 150:
-          console.log('The owner of the requested video does not allow it to be played in embedded players.');
-          break;
-        default:
           console.log('Unknown error occurred.');
-          break;
       }
-    }
+    
 
 function onPlayerReady(event) {
     // Player is ready but no video is loaded
